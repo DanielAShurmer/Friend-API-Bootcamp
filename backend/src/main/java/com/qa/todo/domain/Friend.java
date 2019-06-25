@@ -6,22 +6,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Todo {
+public class Friend {
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String todoName;
+	private String firstName;
+	private String secondName;
+	private Long age;
 	
-	public Todo() 
+	public Friend() 
 	{
 		
 	}
 	
-	public Todo(Long id, String todoName) 
+	public Friend(Long id, String firstName, String secondName, Long age) 
 	{
 		this.id = id;
-		this.todoName = todoName;
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.age = age;
 	}
 	
 	public Long getId() {
@@ -32,16 +36,35 @@ public class Todo {
 		this.id = id;
 	}
 
-	public String getTodoName() {
-		return todoName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setTodoName(String todoName) {
-		this.todoName = todoName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getSecondName() {
+		return secondName;
+	}
+
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
+	}
+	
+	public Long getAge() {
+		return age;
+	}
+
+	public void setAge(Long age) {
+		this.age = age;
 	}
 
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + ", todoName=" + todoName + "]";
+		return "Todo [id=" + id + 
+				", firstName=" + firstName + 
+				", secondName=" + secondName +
+				", age=" + age +"]";
 	}
 }
